@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const HeroSection = () => {
-  const [lectureID, setlectureID] = useState("");
+  const [lectureID, setLectureID] = useState("");
   return (
     <section className="flex my-12 min-h-96  w-full flex-col justify-center items-center">
       <div className="px-28 flex gap-2 items-center justify-center w-full">
@@ -11,19 +11,15 @@ const HeroSection = () => {
           type="url"
           required
           value={lectureID}
-          onChange={(e) => setlectureID(e.target.value)}
+          onChange={(e) => setLectureID(e.target.value)}
         />
       </div>
       {lectureID !== "" && (
         <iframe
-          className="m-8"
-          width="720"
+          className="m-8 w-4/5"
           height="720"
           src={`https://youtube.com/embed/${lectureID}`}
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
         />
       )}
     </section>
