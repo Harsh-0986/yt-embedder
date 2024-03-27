@@ -1,4 +1,4 @@
-import { Header, HeroSection } from "components";
+import { Header, HeroSection } from "./components";
 import { HowToUse } from "./components";
 
 function App() {
