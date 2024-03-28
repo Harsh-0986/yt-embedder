@@ -9,6 +9,7 @@ const root = resolve(__dirname, "src");
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  base: "/yt-embedder/",
   resolve: {
     alias: {
       components: resolve(root, "components"),
