@@ -17,17 +17,17 @@ const HeroSection = () => {
         <input
           className="w-4/5 p-4 border border-black outline-zinc-800 focus:outline-zinc-600 hover:outline-zinc-600 rounded-md"
           placeholder="Paste the video ID or video url"
-          type="text"
+          type="url"
           required
           value={lectureID}
-          onChange={(e) => setLectureID(e.target.value)}
+          onChange={(e) => setLectureID(extractVideoId(e.target.value))}
         />
       </div>
       {lectureID !== "" && (
         <iframe
           className="m-8 w-4/5"
           height="720"
-          src={`https://youtube.com/embed/${extractVideoId(lectureID)}`}
+          src={`https://youtube.com/embed/${lectureID}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         />
       )}
