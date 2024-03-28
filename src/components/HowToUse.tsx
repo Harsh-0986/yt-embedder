@@ -17,9 +17,8 @@ const HowToUse = () => {
           go to the url.
         </li>
         <li>
-          The url will typically of the type{" "}
-          <code>https://youtube.com/watch?v=id</code>. Now get the value written
-          after <code>v</code> and paste it inside the field above.
+          The url will typically of the type&nbsp;
+          <code>https://youtube.com/watch?v=id</code> or <code>https://youtu.be/id</code>. Now you can either enter the video ID or the url to the above field.
         </li>
         <li>
           And, voila <Emoji symbol="🥳" label="voila"></Emoji> the video will

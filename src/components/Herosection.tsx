@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+function extractVideoId(context: string): string {
+  const regex = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|.*[?&]v=))([^/?&]+)/;
+  const match = context.match(regex);
+  if (match) {
+    return match[1];
+  }
+  return context;
+}
+
 const HeroSection = () => {
   const [lectureID, setLectureID] = useState("");
   return (
@@ -7,8 +16,8 @@ const HeroSection = () => {
       <div className="px-28 flex gap-2 items-center justify-center w-full">
         <input
           className="w-4/5 p-4 border border-black outline-zinc-800 focus:outline-zinc-600 hover:outline-zinc-600 rounded-md"
-          placeholder="Enter the ID of the lecture video"
-          type="url"
+          placeholder="Paste the video ID or video url"
+          type="text"
           required
           value={lectureID}
           onChange={(e) => setLectureID(e.target.value)}
@@ -18,7 +27,7 @@ const HeroSection = () => {
         <iframe
           className="m-8 w-4/5"
           height="720"
-          src={`https://youtube.com/embed/${lectureID}`}
+          src={`https://youtube.com/embed/${extractVideoId(lectureID)}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         />
       )}
