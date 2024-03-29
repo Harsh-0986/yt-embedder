@@ -29,6 +29,7 @@ const HeroSection = () => {
           height="720"
           src={`https://youtube.com/embed/${lectureID}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
         />
       )}
     </section>
